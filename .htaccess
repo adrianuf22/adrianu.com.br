@@ -1,0 +1,6 @@
+RewriteEngine on
+
+RewriteCond %{REQUEST_URI} !/postman
+RewriteCond %{REQUEST_FILENAME} !-f
+
+RewriteRule ^(.*/?)$ webroot/index.html [L,QSA]
