@@ -1,0 +1,80 @@
+@font-face {
+  font-family: 'Rodina-Regular2';
+  src: local("Rodina-Regular.otf"), url("../fonts/Rodina-Regular.otf"); }
+@font-face {
+  font-family: 'social';
+  src: local("social.ttf"), url("../fonts/social.ttf"); }
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif !important; }
+
+body .heading-title {
+  font-family: 'Rodina-Regular2';
+  font-size: 2em;
+  color: #fff;
+  padding: 10px; }
+  body .heading-title .heading-blue {
+    color: #2B6592 !important; }
+body section .social-menu {
+  height: 50px;
+  padding: 15px 0; }
+body .slide-body-container {
+  width: 100%;
+  min-height: 400px;
+  overflow: hidden; }
+  body .slide-body-container .slide-body-head {
+    width: 158px;
+    height: 250px;
+    position: absolute;
+    left: -79px;
+    z-index: 100; }
+  body .slide-body-container .slide-body {
+    position: absolute;
+    z-index: 98; }
+  body .slide-body-container .body-cat {
+    width: 278px;
+    height: 219px;
+    left: -90px;
+    margin: 110px 50%;
+    background: url("../images/bodies/cat1.png") no-repeat; }
+  body .slide-body-container .body-cat .slide-body-head {
+    top: -158px; }
+  body .slide-body-container .body-wolverine {
+    width: 357px;
+    height: 412px;
+    left: -178.5px;
+    margin: 15px 50%;
+    background: url("../images/bodies/wolverine.png") no-repeat; }
+  body .slide-body-container .body-wolverine .slide-body-head {
+    top: -57px;
+    left: 72px; }
+  body .slide-body-container .body-dog {
+    width: 350px;
+    height: 350px;
+    left: -175px;
+    margin: 5px 50%;
+    background: url("../images/bodies/dog1.png") no-repeat; }
+  body .slide-body-container .body-dog .slide-body-head {
+    top: 15px;
+    left: 80px; }
+  body .slide-body-container .body-felix {
+    width: 300px;
+    height: 318px;
+    left: -150px;
+    margin: 20px 50%;
+    background: url("../images/bodies/felix.png") no-repeat; }
+  body .slide-body-container .body-felix .slide-body-head {
+    top: -40px;
+    left: 80px;
+    transform: rotate(25deg); }
+
+.list-inline {
+  list-style: none !important;
+  margin: 0 !important;
+  padding: 0; }
+  .list-inline li {
+    display: inline;
+    padding: 2px; }
+
+/*# sourceMappingURL=style.css.map */
