@@ -1,0 +1,13 @@
+{
+    "name": "adrianu/adrianu",
+    "type": "project",
+    "authors": [
+        {
+            "name": "Adriano Caetano",
+            "email": "infernandes.adriano@gmail.com"
+        }
+    ],
+    "require": {
+        "erusev/parsedown": "^1.6"
+    }
+}
