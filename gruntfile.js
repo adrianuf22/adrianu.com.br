@@ -99,6 +99,27 @@ module.exports = function(grunt) {
 												, img: ['<%= distpath %>webroot/images']
 												, fonts: ['<%= distpath %>webroot/fonts']
 								}
+								
+								, replace: {
+												buildHash: {
+																options: {
+																				patterns: [
+																								{
+																												match: 'build'
+																												, replacement: new Date().getTime()
+																								}
+																				]
+																}
+																, files: [
+																				{
+																								expand: true
+																								, flatten: true
+																								, src: ['<%= distpath %>index.html']
+																								, dest: '<%= distpath %>'
+																				}
+																]
+												}
+								}
 				});
 								
 				grunt.registerTask('js', function () {
@@ -147,9 +168,10 @@ module.exports = function(grunt) {
 				grunt.registerTask('dev', ['css','js']);
 				
 				grunt.registerTask('build', function () {
+								grunt.loadNpmTasks('grunt-replace');
 								grunt.loadNpmTasks('grunt-contrib-copy');
 								grunt.config.data.distpath = './dist/';
 								
-								grunt.task.run(['css','cssBuild','js','jsBuild','img','font','copy:index']);
+								grunt.task.run(['css','cssBuild','js','jsBuild','img','font','copy:index','replace:buildHash']);
 				});
 };
