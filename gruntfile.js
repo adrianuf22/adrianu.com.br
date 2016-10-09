@@ -32,10 +32,12 @@ module.exports = function(grunt) {
 								
 								, concat: {
 												app: {
-																'<%= distpath %>js/app.js': ['src/assets/js/body.control.js']
+																src:  ['src/assets/js/body.control.js']
+																, dest: '<%= distpath %>webroot/js/app.js'
 												}
 												, third: {
-																'<%= distpath %>js/third.js': ['src/assets/js/third/hammer.min.js']
+																src: ['src/assets/js/third/hammer.min.js']
+																, dest: '<%= distpath %>webroot/js/third.js'
 												}
 								}
 								
@@ -94,8 +96,6 @@ module.exports = function(grunt) {
 								}
 				});
 								
-				grunt.registerTask('default', ['css', 'img']);
-				
 				grunt.registerTask('js', function () {
 								grunt.loadNpmTasks('grunt-contrib-concat');
 								
@@ -105,7 +105,7 @@ module.exports = function(grunt) {
 				grunt.registerTask('jsBuild', function () {
 								grunt.loadNpmTasks('grunt-contrib-uglify');
 								
-								grunt.task.run(['js','uglify']);
+								grunt.task.run(['uglify']);
 				});
 				
 				grunt.registerTask('css', function () {
@@ -118,7 +118,7 @@ module.exports = function(grunt) {
 				grunt.registerTask('cssBuild', function () {
 								grunt.loadNpmTasks('grunt-contrib-cssmin');
 								
-								grunt.task.run(['css', 'cssmin']);
+								grunt.task.run(['cssmin']);
 				});
 				
 				grunt.registerTask('img', function () {
@@ -135,10 +135,16 @@ module.exports = function(grunt) {
 								grunt.task.run(['clean:fonts', 'copy:fonts']);
 				});
 				
+				// To execute
+				
+				grunt.registerTask('default', ['css','js','font', 'img']);
+				
+				grunt.registerTask('dev', ['css','js']);
+				
 				grunt.registerTask('build', function () {
 								grunt.loadNpmTasks('grunt-contrib-copy');
-								grunt.config.data.distpath = 'dist/';
+								grunt.config.data.distpath = './dist/';
 								
-								grunt.task.run(['cssBuild','jsBuild','img','font','copy:index']);
+								grunt.task.run(['css','cssBuild','js','jsBuild','img','font','copy:index']);
 				});
 };
