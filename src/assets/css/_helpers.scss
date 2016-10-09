@@ -8,8 +8,24 @@ and open the template in the editor.
     Author     : adriano
 */
 
-@include breakpoint('xs') {
-				.hidden-xs {
-								display: none;
+@each $break in $breakpoints {
+				@include breakpoint($break) {
+								.hidden-#{$break} {
+												display: none;
+								}
+								
+								.visible-#{$break} {
+												&.as-block {
+																display: block !important;
+												}
+												
+												&.as-inline {
+																display: inline !important;
+												}
+												
+												&.as-inline-block {
+																display: inline-block !important;
+												}
+								}
 				}
 }

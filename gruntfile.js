@@ -82,7 +82,12 @@ module.exports = function(grunt) {
 																				{
 																								expand: true
 																								, cwd: 'src/assets/fonts/'
-																								, src: ['**/*']
+																								, src: [
+																												'**/*.otf'
+																												, 'icons.eot'
+																												, 'icons.ttf'
+																												, 'icons.woff'
+																								]
 																								, dest: '<%=distpath %>webroot/fonts/'
 																				}
 																]

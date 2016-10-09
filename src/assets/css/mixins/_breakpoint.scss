@@ -9,20 +9,19 @@ and open the template in the editor.
 */
 
 @mixin breakpoint($break) {
-				@if $break == xs {
-								@media (min-width: 367px ) {
+				$min: map-get(map-get($breakpoints-width, $break),'min');
+				$max: map-get(map-get($breakpoints-width, $break),'max');
+				
+				@if $min != none and $max != none {
+								@media (min-width: $min) and (max-width: $max) {
 												@content;
 								}
-				} @else if  $break == sm {
-								@media (min-width: 768px ) {
+				} @else if $min != none {
+								@media (min-width: $min) {
 												@content;
 								}
-				} @else if  $break == md {
-								@media (min-width: 992px ) {
-												@content;
-								}
-				} @else if  $break == lg {
-								@media (min-width: 1200px ) {
+				} @else if $max != none {
+								@media (max-width: $max) {
 												@content;
 								}
 				}

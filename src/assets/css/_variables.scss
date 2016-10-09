@@ -9,3 +9,16 @@ and open the template in the editor.
 */
 
 $breakpoints: ('xs','sm','md','lg');
+
+$width-xs: 368px;
+$width-sm: 768px;
+$width-md: 992px;
+$width-lg: 1200px;
+
+$breakpoints-width: (
+				xs: (min: none, max: $width-sm - 1)
+				, sm: (min: $width-sm, max: $width-md - 1)
+				, md: (min: $width-md, max: $width-lg - 1)
+				, lg: (min: $width-lg, max:none)
+);
+
