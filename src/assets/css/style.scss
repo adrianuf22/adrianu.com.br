@@ -10,12 +10,11 @@
 				src: local("Rodina-Regular.otf"), url("../fonts/Rodina-Regular.otf");
 }
 
-@font-face {
-				font-family: 'social';
-				src: local("social.ttf"), url("../fonts/social.ttf");
-}
+@import 'icons';
 
 body {
+				overflow: hidden;
+				
 				font-family: sans-serif !important;
 				background-color: #4797C7;
 				.topbar {
@@ -23,8 +22,6 @@ body {
 								height: 54px;
 								line-height: 54px;
 								top: 0;
-								/*background-color: #343339;*/
-								/*position: fixed;*/
 								z-index: 9999;
 								
 								.left-content {
@@ -53,35 +50,61 @@ body {
 								width: auto;
 								min-height: 48px;
 								text-align: center;
-
+								
+								.social-menu-dropdown {
+												display: none;
+												width: 50px;
+												font-size: xx-large;
+												text-decoration: none;
+												
+												&:hover, &:focus {
+																background-color: #3a5c77; 
+												}
+								}
+								
+								@include breakpoint('xs') {
+												
+												.social-menu-dropdown{
+																display: inline-block;
+																
+																&:focus, &:active {
+																				~ ul {
+																								height: 100%;
+																								background-color: #3a5c77;
+																				}
+																}
+												}
+												
+												ul {
+																transition: height .5s;
+																//display: none;
+																height: 0;
+																overflow: hidden;
+																position: absolute;
+																width: 100%;
+																margin: 0;
+																right: 0;
+																top: 54px;
+																z-index: 99999;
+																background: #3a5c77;
+																
+																li {
+																				display: block !important;
+																}
+												}
+								};
+								
 								ul {
 												line-height: inherit;
 												/*padding: 15px;*/
 
 												li {
 																display: inline;
-																margin: 0 10px;
+																margin: 0 5px;
 
 																a {
 																				color: #fff;
 																				text-decoration: none;
-																}
-
-																.ico {
-																				font-family: social;
-																				color: #fff;
-
-																				&.ico-twitter:before {
-																								content: 't'; 
-																				}
-
-																				&.ico-codepen:before {
-																								content: 'c'; 
-																				}
-
-																				&.ico-linkedin:before {
-																								content: 'l'; 
-																				}
 																}
 												}
 								}
