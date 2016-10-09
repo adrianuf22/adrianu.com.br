@@ -1,6 +1,6 @@
 @import 'reset';
 
-$breakpoints: ('xxs','xs','sm','md','lg');
+@import 'variables';
 
 @import 'mixins/breakpoint';
 @import 'helpers';

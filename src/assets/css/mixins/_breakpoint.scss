@@ -9,9 +9,7 @@ and open the template in the editor.
 */
 
 @mixin breakpoint($break) {
-				@if $break == xxs {
-								@content;
-				} @else if $break == xs {
+				@if $break == xs {
 								@media (min-width: 367px ) {
 												@content;
 								}
