@@ -1,12 +1,11 @@
 {
   "name": "adrianu",
   "version": "1.0.0",
-  "description": "",
-  "main": "gruntfile.js",
+  "description": "adrianu.com.br is a personal project of Adriano Caetano (@infernades)",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "node test/test.js"
   },
-  "author": "",
+  "author": "Adriano Caetano <adrianu_f22@hotmail.com>",
   "license": "ISC",
   "devDependencies": {
     "grunt-contrib-clean": "^1.0.0",
