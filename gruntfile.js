@@ -136,7 +136,7 @@ module.exports = function (grunt) {
 
     grunt.registerTask('css', function () {
         grunt.loadNpmTasks('grunt-contrib-clean');
-        grunt.loadNpmTasks('grunt-contrib-sass');
+        grunt.loadNpmTasks('grunt-sass');
 
         grunt.task.run(['clean:css', 'sass']);
     });
