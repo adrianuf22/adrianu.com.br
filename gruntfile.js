@@ -2,7 +2,7 @@ module.exports = function (grunt) {
     // Project configuration.
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
-        distpath: './',
+        distpath: './dist/',
         sass: {
             dist: {
                 files: [
@@ -59,9 +59,10 @@ module.exports = function (grunt) {
                 files: [
                     {
                         src: [
-                            'index.html'
-                            , '.htaccess'
-                            , 'vendor/**/*'
+                            'index.html',
+                            '.htaccess',
+                            './www/**/*',
+
                         ]
                         , dest: '<%= distpath %>'
                     }
