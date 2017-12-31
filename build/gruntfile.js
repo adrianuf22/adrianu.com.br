@@ -1,8 +1,12 @@
+'use strict';
+
 module.exports = function (grunt) {
+    const DEVELOP_MODE = 'dev';
+
     // Project configuration.
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
-        distpath: './dist/',
+        // distpath: './dist/',
         sass: {
             dist: {
                 files: [
@@ -168,11 +172,19 @@ module.exports = function (grunt) {
 
     grunt.registerTask('dev', ['css', 'js']);
 
-    grunt.registerTask('build', function () {
+    grunt.registerTask('build', function (mode) {
         grunt.loadNpmTasks('grunt-replace');
         grunt.loadNpmTasks('grunt-contrib-copy');
-        grunt.config.data.distpath = './dist/';
 
+        grunt.config.data.distpath = getDistDir(mode);
+        
         grunt.task.run(['css', 'cssBuild', 'js', 'jsBuild', 'img', 'font', 'copy:index', 'replace:buildHash']);
     });
+
+    function getDistDir(mode) {
+        if (mode === DEVELOP_MODE) {
+            return './';
+        }
+        return './dist/';
+    }
 };
