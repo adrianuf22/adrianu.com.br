@@ -5,10 +5,15 @@ COPY package.json ./
 
 RUN npm install
 
+COPY index.html ./index.html
+RUN mkdir src
+COPY src/ ./src/ 
+
 RUN mkdir build
 COPY build/gruntfile.js ./build/
 RUN npm install -g grunt-cli
-RUN npm run build
+
+RUN npm run dev
 
 RUN npm install http-server -g
 EXPOSE 3000
