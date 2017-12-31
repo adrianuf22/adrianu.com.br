@@ -77,7 +77,12 @@ module.exports = function (grunt) {
                     {
                         expand: true
                         , cwd: 'src/assets/images/'
-                        , src: ['bodies/**', 'favicon.png', 'logo.svg']
+                        , src: [
+                            'bodies/**',
+                            'icons/**',
+                            'favicon.png',
+                            'logo.svg',
+                        ]
                         , dest: '<%= distpath %>www/images/'
                     }
                 ]
@@ -88,11 +93,8 @@ module.exports = function (grunt) {
                         expand: true
                         , cwd: 'src/assets/fonts/'
                         , src: [
-                        '**/*.otf'
-                        , 'icons.eot'
-                        , 'icons.ttf'
-                        , 'icons.woff'
-                    ]
+                            '**/*.otf'
+                        ]
                         , dest: '<%=distpath %>www/fonts/'
                     }
                 ]

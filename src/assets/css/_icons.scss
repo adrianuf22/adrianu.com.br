@@ -1,41 +1,21 @@
-/*
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
-*/
-/* 
-    Created on : Oct 9, 2016, 5:17:52 PM
-    Author     : adriano
-*/
+.icon {
+	width: 20px;
+	height: 20px;
+	line-height: 20px;
+	vertical-align: middle;
+	display: inline-block;
 
-@font-face {
-				font-family: 'icons';
-				src: local("icons.ttf"), url("../fonts/icons.ttf");
-				src: local("icons.eot"), url("../fonts/icons.eot");
-				src: local("icons.woff"), url("../fonts/icons.woff");
+	img {
+		width: inherit;
+		height: inherit;
+	}
+
+	&__toggle-menu {
+		width: 32px;
+		height: 32px;
+	}
 }
 
-.ico {
-				font-family: icons;
-				color: #fff;
-				
-				&.ico-hamburg:before {
-								content: '\1f300';
-				}
-
-				&.ico-share:before {
-								content: '\1f301';
-				}
-
-				&.ico-twitter:before {
-								content: '\1f302'; 
-				}
-
-				&.ico-codepen:before {
-								content: '\1f304';
-				}
-
-				&.ico-linkedin:before {
-								content: '\1f303';
-				}
+.icon + span {
+	vertical-align: middle;
 }
