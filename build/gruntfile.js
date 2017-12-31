@@ -65,7 +65,7 @@ module.exports = function (grunt) {
                         src: [
                             'index.html',
                             '.htaccess',
-                            './www/**/*',
+                            '/src/manifest.json',
 
                         ]
                         , dest: '<%= distpath %>'
