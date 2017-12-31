@@ -1,0 +1,16 @@
+FROM node:latest
+
+WORKDIR /usr/src/app
+COPY package.json ./
+
+RUN npm install
+
+RUN mkdir build
+COPY build/gruntfile.js ./build/
+RUN npm install -g grunt-cli
+RUN npm run build
+
+RUN npm install http-server -g
+EXPOSE 3000
+
+CMD [ "http-server", "-p3000" ]

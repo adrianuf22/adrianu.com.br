@@ -1,0 +1,14 @@
+version: "3"
+services:
+  web:
+    build: 
+      context: .
+      dockerfile: docker/node-dev
+    container_name: web_node
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./index.html:/usr/src/app/index.html
+      - ./build:/usr/src/app/build
+      - ./src:/usr/src/app/src
+      - ./test:/usr/src/app/test
