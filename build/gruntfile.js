@@ -1,7 +1,5 @@
-'use strict';
-
 module.exports = function (grunt) {
-    const DEVELOP_MODE = 'dev';
+    var DEVELOP_MODE = 'dev';
 
     // Project configuration.
     grunt.initConfig({
